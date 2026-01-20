@@ -4,7 +4,7 @@ on:
   schedule:
     # El tiempo está en formato CRON (UTC)
     # Ejemplo: Todos los días a las 15:00 UTC (ajusta según tu zona horaria)
-    - cron: '35 14 * * *'
+    - cron: '45 18 * * *'
   workflow_dispatch: # Esto permite ejecutarlo manualmente para probar
 
 jobs:
