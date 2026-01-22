@@ -2,10 +2,11 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+import time
 
 # Configuración de Chrome para que funcione en GitHub Actions
 chrome_options = Options()
-chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
@@ -20,6 +21,7 @@ try:
     boton = driver.find_element(By.ID, "whatsapp")
     
     boton.click()
+    time.sleep(20)
     print("Clic realizado con éxito")
 
 except Exception as e:
