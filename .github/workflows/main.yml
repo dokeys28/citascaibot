@@ -1,28 +1,27 @@
-name: Ejecutar Clic Automático Diario
+name: Clic Automático Diario
 
 on:
   schedule:
-    # El tiempo está en formato CRON (UTC)
-    # Ejemplo: Todos los días a las 15:00 UTC (ajusta según tu zona horaria)
-    - cron: '00 14 * * *'
-  workflow_dispatch: # Esto permite ejecutarlo manualmente para probar
+    # Define la hora en formato UTC (Ejemplo: 14:00 UTC)
+    # El formato es: Minuto Hora Día Mes Día_de_la_semana
+    - cron: "0 19 * * *"
+  workflow_dispatch: # Permite ejecutarlo manualmente para probar
 
 jobs:
-  click-job:
+  ejecutar-clic:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar código
+      - name: Descargar código del repo
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '20'
+          python-version: "3.9"
 
       - name: Instalar dependencias
         run: |
-          npm install playwright
-          npx playwright install chromium --with-deps
+          pip install selenium webdriver-manager
 
       - name: Ejecutar script de clic
-        run: node index.js
+        run: python script.py
