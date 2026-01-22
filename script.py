@@ -6,7 +6,7 @@ import time
 
 # Configuración de Chrome para que funcione en GitHub Actions
 chrome_options = Options()
-# chrome_options.add_argument("--headless")
+chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
