@@ -14,7 +14,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 try:
     # 1. Cambia por la URL de tu página
-    driver.get("https://citascai.vercel.app/")
+    driver.get("https://citascai.vercel.app/whatsapp")
     
     # 2. Encuentra el botón (ajusta el selector CSS o ID)
     # Ejemplo: si el botón tiene id="btn-enviar"
